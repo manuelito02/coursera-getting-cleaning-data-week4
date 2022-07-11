@@ -56,5 +56,7 @@ run_analysis <- function() {
     tidy_data <- group_by(data, activitylabel, subjectid)
     tidy_data_summarized <- summarize_all(tidy_data, mean)
 
+    write.table(tidy_data_summarized, "data/tidy_dataset.txt", row.names = FALSE)
+
     tidy_data_summarized
 }
